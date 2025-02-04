@@ -13,6 +13,7 @@
 title = "Editor Theme Explorer"
 position = Vector2i(0, 36)
 size = Vector2i(996, 640)
+visible = false
 wrap_controls = true
 transient = true
 min_size = Vector2i(996, 640)

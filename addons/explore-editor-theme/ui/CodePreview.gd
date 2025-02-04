@@ -8,6 +8,8 @@ const _PluginUtils := preload("res://addons/explore-editor-theme/utils/PluginUti
 @onready var code_input : CodeEdit = $CodeText
 @onready var copy_code_button : Button = $CopyCodeButton
 
+signal copied
+
 # Public variables
 var code_text : String = "":
 	set = set_code_text
@@ -16,6 +18,7 @@ func _ready() -> void:
 	_update_highlighter()
 
 	copy_code_button.pressed.connect(self._on_copy_button_pressed)
+
 
 func _update_highlighter() -> void:
 	if !_PluginUtils.get_plugin_instance(self):
@@ -37,3 +40,9 @@ func _on_copy_button_pressed() -> void:
 
 	DisplayServer.clipboard_set(copied_text)
 	copy_code_button.icon = get_theme_icon("StatusSuccess", "EditorIcons")
+	copied.emit()
+
+
+func _input(event:InputEvent) -> void:
+	if is_visible_in_tree() and Input.is_action_pressed("ui_copy") and $CodeText.has_focus():
+		copied.emit()

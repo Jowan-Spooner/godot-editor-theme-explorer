@@ -32,6 +32,7 @@ const _IconSaver := preload("res://addons/explore-editor-theme/ui/IconSaver.gd")
 func _ready() -> void:
 	_load_icon_tags()
 	_update_theme()
+	_on_collapse_common_tags_toggled(false)
 	%IconPanel.hide()
 
 	_icon_map[_default_type_name] = []
@@ -43,7 +44,7 @@ func _ready() -> void:
 	icon_saver.filesystem_changed.connect(self.emit_signal.bind("filesystem_changed"))
 
 	%ListMode.button_group.pressed.connect(func(x):_refresh_icon_list())
-
+	%Filter.filter_text = "tag:Favorites"
 
 
 func _update_theme() -> void:
@@ -208,7 +209,9 @@ func _on_add_tag_edit_text_submitted(new_text: String) -> void:
 		if not id in _icon_tags:
 			_icon_tags[id] = []
 
-		_icon_tags[id].append(new_text)
+		new_text = new_text.replace(" ", "")
+		if not new_text in _icon_tags[id]:
+			_icon_tags[id].append(new_text)
 
 	%AddTagEdit.clear()
 	update_tags()
@@ -239,14 +242,22 @@ func update_tags() -> void:
 		child.queue_free()
 
 	for tag in tags:
-		var button := Button.new()
-		button.text = tag
-		button.gui_input.connect(_on_tag_gui_input.bind(button))
-		%Tags.add_child(button)
+		%Tags.add_child(create_tag_button(tag))
 
+
+func create_tag_button(text:String, global:= false) -> Button:
+	var button := Button.new()
+	button.text = text
+	if button.text == "Favorites":
+		button.icon = get_theme_icon("Favorites", "EditorIcons")
+	if button.text == "Used":
+		button.icon = get_theme_icon("History", "EditorIcons")
+
+	button.gui_input.connect(_on_tag_gui_input.bind(button, global))
+	return button
 
 func update_common_tags() -> void:
-	var common_tags := {"none":0}
+	var common_tags := {"Used":300, "Favorites":301}
 	for icon in _icon_tags:
 		for tag in _icon_tags[icon]:
 			if not tag in common_tags:
@@ -260,12 +271,10 @@ func update_common_tags() -> void:
 		child.queue_free()
 
 	for tag in tags:
-		if common_tags[tag] < 2:
+		# Tags that are all lowercase are not groups, but simply descriptors
+		if tag.to_lower() == tag:
 			continue
-		var button := Button.new()
-		button.text = tag
-		button.gui_input.connect(_on_tag_gui_input.bind(button, true))
-		%CommonTags.add_child(button)
+		%CommonTags.add_child(create_tag_button(tag, true))
 
 
 var right_click_on_button :Button= null
@@ -337,6 +346,7 @@ func rename_tag(from:String, to:String) -> void:
 				_icon_tags[icon_id].erase(from)
 				_icon_tags[icon_id].append(to)
 
+	store_icon_tags()
 	_refresh_icon_list()
 
 
@@ -346,3 +356,17 @@ func _on_rename_edit_focus_exited() -> void:
 
 func _on_rename_edit_text_submitted(new_text: String) -> void:
 	rename_tag(right_click_on_button.text, new_text)
+
+
+func _on_icon_code_copied() -> void:
+	_on_add_tag_edit_text_submitted("Used")
+	store_icon_tags()
+
+
+func _on_collapse_common_tags_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		%CollapseCommonTags.icon = get_theme_icon("CodeFoldDownArrow", "EditorIcons")
+		%CommonTags.custom_minimum_size.x = 0
+	else:
+		%CollapseCommonTags.icon = get_theme_icon("CodeFoldedRightArrow", "EditorIcons")
+		%CommonTags.custom_minimum_size.x = 3000

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtnrjguhery8r"]
+[gd_scene load_steps=9 format=3 uid="uid://dtnrjguhery8r"]
 
 [ext_resource type="Script" path="res://addons/explore-editor-theme/tabs/EditorIcons.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://ds8c70l2dnpy8" path="res://addons/explore-editor-theme/ui/CodePreview.tscn" id="2"]
@@ -7,6 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dwsc0c4b3wt28" path="res://addons/explore-editor-theme/ui/IconSaver.tscn" id="6"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_b2pd3"]
+
+[sub_resource type="Image" id="Image_sjg42"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_cuqnh"]
+image = SubResource("Image_sjg42")
 
 [node name="Icons" type="MarginContainer"]
 anchors_preset = 15
@@ -34,6 +46,7 @@ button_group = SubResource("ButtonGroup_b2pd3")
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
+button_pressed = true
 button_group = SubResource("ButtonGroup_b2pd3")
 
 [node name="Type" parent="Layout/Toolbar" instance=ExtResource("4")]
@@ -43,6 +56,28 @@ layout_mode = 2
 layout_mode = 2
 text = "Debug"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+
+[node name="CollapseCommonTags" type="Button" parent="Layout/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+icon = SubResource("ImageTexture_cuqnh")
+
+[node name="CommonTagsScroll" type="ScrollContainer" parent="Layout/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="CommonTags" type="HFlowContainer" parent="Layout/HBoxContainer/CommonTagsScroll"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(3000, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="IconView" type="HSplitContainer" parent="Layout"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -50,10 +85,6 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/IconView"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="CommonTags" type="HFlowContainer" parent="Layout/IconView/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="IconList" type="ItemList" parent="Layout/IconView/VBoxContainer"]
 unique_name_in_owner = true
@@ -63,8 +94,8 @@ size_flags_vertical = 3
 select_mode = 1
 max_columns = 0
 same_column_width = true
-fixed_column_width = 220
-fixed_icon_size = Vector2i(16, 16)
+fixed_column_width = 40
+fixed_icon_size = Vector2i(32, 32)
 
 [node name="IconPanel" type="VBoxContainer" parent="Layout/IconView"]
 unique_name_in_owner = true
@@ -124,6 +155,8 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Multiple items selected"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TagLabel" type="Label" parent="Layout/IconView/IconPanel"]
 layout_mode = 2
@@ -158,6 +191,8 @@ custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 
 [connection signal="pressed" from="Layout/Toolbar/Debug" to="." method="_on_debug_pressed"]
+[connection signal="toggled" from="Layout/HBoxContainer/CollapseCommonTags" to="." method="_on_collapse_common_tags_toggled"]
+[connection signal="copied" from="Layout/IconView/IconPanel/SingleSelection/IconCode" to="." method="_on_icon_code_copied"]
 [connection signal="focus_exited" from="Layout/IconView/IconPanel/RenameEdit" to="." method="_on_rename_edit_focus_exited"]
 [connection signal="text_submitted" from="Layout/IconView/IconPanel/RenameEdit" to="." method="_on_rename_edit_text_submitted"]
 [connection signal="id_pressed" from="Layout/IconView/IconPanel/TagPopupMenu" to="." method="_on_tag_popup_menu_id_pressed"]
