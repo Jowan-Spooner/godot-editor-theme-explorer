@@ -22,6 +22,7 @@ const _PluginUtils := preload("res://addons/explore-editor-theme/utils/PluginUti
 
 func _ready() -> void:
 	_update_theme()
+	hide()
 
 	icon_explorer.filesystem_changed.connect(self.emit_signal.bind("filesystem_changed"))
 

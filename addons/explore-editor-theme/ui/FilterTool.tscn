@@ -10,10 +10,12 @@ script = ExtResource("1")
 label_text = "Filter"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 2
 text = "Filter"
 
 [node name="Input" type="LineEdit" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+placeholder_text = "Filter"
 clear_button_enabled = true
