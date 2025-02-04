@@ -2,7 +2,7 @@
 extends MarginContainer
 
 # Public properties
-@export var preview_background_texture : Texture
+var preview_background_texture : Texture
 
 # Private properties
 var _stylebox_map : Dictionary = {}
@@ -29,6 +29,7 @@ const _PluginUtils := preload("res://addons/explore-editor-theme/utils/PluginUti
 var stylebox_item_scene := preload("res://addons/explore-editor-theme/lists/StyleboxListItem.tscn")
 
 func _ready() -> void:
+	preview_background_texture = load("res://addons/explore-editor-theme/color-preview-icon.png")
 	_update_theme()
 	_update_preview_background()
 
@@ -37,6 +38,8 @@ func _ready() -> void:
 
 	filter_tool.text_changed.connect(self._on_filter_text_changed)
 	type_tool.item_selected.connect(self._on_type_item_selected)
+
+
 
 func _update_theme() -> void:
 	if (!_PluginUtils.get_plugin_instance(self)):

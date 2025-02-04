@@ -2,7 +2,7 @@
 extends MarginContainer
 
 # Public properties
-@export var color_icon_background : Texture
+var color_icon_background : Texture2D
 
 # Private properties
 var _color_map : Dictionary = {}
@@ -34,6 +34,7 @@ func _ready() -> void:
 	filter_tool.text_changed.connect(self._on_filter_text_changed)
 	type_tool.item_selected.connect(self._on_type_item_selected)
 	color_list.item_selected.connect(self._on_color_item_selected)
+	color_icon_background = load("res://addons/explore-editor-theme/color-preview-icon.png")
 
 func _update_theme() -> void:
 	if (!_PluginUtils.get_plugin_instance(self)):

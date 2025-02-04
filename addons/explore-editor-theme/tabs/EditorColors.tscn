@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dti6srt6g56ce"]
+[gd_scene load_steps=5 format=3 uid="uid://dti6srt6g56ce"]
 
 [ext_resource type="PackedScene" uid="uid://ds8c70l2dnpy8" path="res://addons/explore-editor-theme/ui/CodePreview.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://1o4lmgmicu6s" path="res://addons/explore-editor-theme/color-preview-icon.png" id="2_lmyt4"]
 [ext_resource type="Script" path="res://addons/explore-editor-theme/tabs/EditorColors.gd" id="3"]
 [ext_resource type="PackedScene" uid="uid://c6mun6p3lk1k6" path="res://addons/explore-editor-theme/ui/FilterTool.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bg7phy5jdt0wl" path="res://addons/explore-editor-theme/ui/TypeTool.tscn" id="5"]
@@ -11,7 +10,6 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("3")
-color_icon_background = ExtResource("2_lmyt4")
 
 [node name="Layout" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -21,7 +19,6 @@ layout_mode = 2
 
 [node name="Filter" parent="Layout/Toolbar" instance=ExtResource("4")]
 layout_mode = 2
-label_text = "Filter"
 
 [node name="Type" parent="Layout/Toolbar" instance=ExtResource("5")]
 layout_mode = 2

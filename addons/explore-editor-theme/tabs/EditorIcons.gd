@@ -248,10 +248,8 @@ func update_tags() -> void:
 func create_tag_button(text:String, global:= false) -> Button:
 	var button := Button.new()
 	button.text = text
-	if button.text == "Favorites":
-		button.icon = get_theme_icon("Favorites", "EditorIcons")
-	if button.text == "Used":
-		button.icon = get_theme_icon("History", "EditorIcons")
+	if button.text in _icon_tags:
+		button.icon = get_theme_icon(_icon_tags[button.text].split(" ")[0], _icon_tags[button.text].split(" ")[1])
 
 	button.gui_input.connect(_on_tag_gui_input.bind(button, global))
 	return button
@@ -259,6 +257,8 @@ func create_tag_button(text:String, global:= false) -> Button:
 func update_common_tags() -> void:
 	var common_tags := {"Used":300, "Favorites":301}
 	for icon in _icon_tags:
+		if not ":" in icon:
+			continue
 		for tag in _icon_tags[icon]:
 			if not tag in common_tags:
 				common_tags[tag] = 0
@@ -328,6 +328,17 @@ func _on_tag_popup_menu_id_pressed(id: int) -> void:
 		update_tags()
 		_refresh_icon_list()
 
+	if id == 2:
+		var icon_name := icon_list.get_item_tooltip(icon_list.get_selected_items()[0])
+		var type_name: String = type_tool.get_selected_text()
+		set_tag_icon(right_click_on_button.text, icon_name, type_name)
+		_refresh_icon_list()
+		update_tags()
+
+
+func set_tag_icon(tag:String, icon_name:String, icon_type:String) -> void:
+	_icon_tags[tag] = icon_name+" "+icon_type
+	store_icon_tags()
 
 func rename_tag(from:String, to:String) -> void:
 	%RenameEdit.hide()
